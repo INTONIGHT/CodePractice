@@ -1,8 +1,8 @@
 package helloThere;
 
 public class Check {
-	public boolean checkCard(String num) {
-		String temp = num;
+	public boolean checkCard(long num) {
+		String temp = Double.toString(num);
 		
 		if(temp.length() < 13 || temp.length() > 20) {
 			return false;
@@ -61,7 +61,7 @@ public class Check {
 	
 	public static void main(String[] args) {
 		Check test = new Check();
-		String x = "1234567890123452";
+		long x = 1234567890123452L;
 		System.out.println(test.checkCard(x));
 		
 	}
