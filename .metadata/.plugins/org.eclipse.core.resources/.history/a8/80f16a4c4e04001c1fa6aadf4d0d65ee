@@ -1,15 +1,13 @@
 package helloThere;
 
 public class Check {
-	public boolean checkCard(double num) {
+	public boolean checkCard(float num) {
 		String temp = Double.toString(num);
-		
-		if(temp.length() < 13 || temp.length() > 20) {
+		System.out.println(temp.length());
+		if(temp.length() < 14 || temp.length() > 19) {
 			return false;
 		}
-		int len = temp.length();
-		
-		char x = temp.charAt(len);
+		char x = temp.charAt(temp.length());
 		//this y is important
 		int y = Integer.parseInt(String.valueOf(x));
 		//stripping the temp1 of the last character
@@ -61,8 +59,11 @@ public class Check {
 	
 	public static void main(String[] args) {
 		Check test = new Check();
-		double x = 1234567890123452.0;
-		System.out.println(test.checkCard(x));
+		if(test.checkCard(25) == true) {
+			System.out.println("failure");
+		}else if(test.checkCard(25) == false) {
+			System.out.println("Success");
+		}
 		
 	}
 }

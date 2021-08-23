@@ -1,7 +1,7 @@
 package helloThere;
 
 public class Check {
-	public boolean checkCard(double num) {
+	public boolean checkCard(float num) {
 		String temp = Double.toString(num);
 		
 		if(temp.length() < 13 || temp.length() > 20) {
@@ -61,7 +61,7 @@ public class Check {
 	
 	public static void main(String[] args) {
 		Check test = new Check();
-		double x = 1234567890123452.0;
+		float x = 1234567890123452f;
 		System.out.println(test.checkCard(x));
 		
 	}
