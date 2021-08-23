@@ -1,14 +1,12 @@
 package helloThere;
 
 public class Check {
-	public void checkCard(float num) {
-		String temp = Double.toString(num);
+	boolean checkCard(int num) {
+		String temp = Integer.toString(num);
 		if(temp.length() < 14 || temp.length() > 19) {
-			System.out.println("False");
+			return false;
 		}
 		char x = temp.charAt(temp.length());
-		//this y is important
-		int y = Integer.parseInt(String.valueOf(x));
 		//stripping the temp1 of the last character
 		String temp1 = temp.substring(0, temp.length()-1);
 		//using String builder so some of what I do is easier.
@@ -40,25 +38,9 @@ public class Check {
 				input1[i] = tempDig;
 			}
 		}
-		int trueSum = 0;
-		for(int i=0;i<input1.length;i++) {
-			trueSum += input1[i];
-		}
-		String temp4 = Integer.toString(trueSum);
-		char z = temp4.charAt(temp4.length());
-		int w = Integer.parseInt(String.valueOf(z));
-		int u = 10 -w;
-		if(u != y) {
-			System.out.println("False");
-		}else {
-			System.out.println("True");
-		}
-		
 	}
 	
 	public static void main(String[] args) {
-		Check test = new Check();
-		test.checkCard(25);
 		
 	}
 }
